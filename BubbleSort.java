@@ -20,7 +20,7 @@ public class BubbleSort
             }
         }
         long endTime = System.nanoTime();
-        long time = (endTime - startTime)/1000000;
+        long time = (endTime - startTime);
         System.out.println("Run Time: " + time);
         return arr;
     }
@@ -41,7 +41,7 @@ public class BubbleSort
             }
         }
         long endTime = System.nanoTime();
-        long time = (endTime - startTime)/1000000;
+        long time = (endTime - startTime);
         System.out.println("Run Time: " + time);
         return arr;
     }
@@ -62,7 +62,7 @@ public class BubbleSort
             }
         }
         long endTime = System.nanoTime();
-        long time = (endTime - startTime)/1000000;
+        long time = (endTime - startTime);
         System.out.println("Run Time: " + time);
         return arr;
     }

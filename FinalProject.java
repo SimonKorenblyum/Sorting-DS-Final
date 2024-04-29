@@ -23,7 +23,7 @@ public class FinalProject
         iArr2a[2] = 4;
         iArr2a[3] = 3;
         System.out.println("int bubble sort");
-        int [] iArr2b = intBubbleSort.intBubbleSort(iArr2a);
+        int [] iArr2b = BubbleSort.intBubbleSort(iArr2a);
         for(int i = 0; i < 4; i++)
         {
             System.out.print(iArr2b[i] + "  ");
@@ -65,7 +65,7 @@ public class FinalProject
         dArr2a[2] = 1.4;
         dArr2a[3] = 1.3;
         System.out.println("double bubble sort");
-        double [] dArr2b = doubleBubbleSort.doubleBubbleSort(dArr2a);
+        double [] dArr2b = BubbleSort.doubleBubbleSort(dArr2a);
         for(int i = 0; i < 4; i++)
         {
             System.out.print(dArr2b[i] + "  ");
@@ -101,13 +101,13 @@ public class FinalProject
         System.out.println("\n\n");
 
         //char bubble sort
-        char [] cArr2a = new char [4];
-        cArr2a[0] = 'b';
-        cArr2a[1] = 'd';
-        cArr2a[2] = 'a';
-        cArr2a[3] = 'c';
+        String [] cArr2a = new String [4];
+        cArr2a[0] = "b";
+        cArr2a[1] = "d";
+        cArr2a[2] = "a";
+        cArr2a[3] = "c";
         System.out.println("char bubble sort");
-        char [] cArr2b = charBubbleSort.charBubbleSort(cArr2a);
+        String [] cArr2b = BubbleSort.stringBubbleSort(cArr2a);
         for(int i = 0; i < 4; i++)
         {
             System.out.print(cArr2b[i] + "  ");
@@ -121,7 +121,7 @@ public class FinalProject
         cArr3a[2] = 'a';
         cArr3a[3] = 'c';
         System.out.println("char bubble sort");
-        char [] cArr3b = charHeapSort.charHeapSort(cArr2a);
+        char [] cArr3b = charHeapSort.charHeapSort(cArr3a);
         for(int i = 0; i < 4; i++)
         {
             System.out.print(cArr3b[i] + "  ");
