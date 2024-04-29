@@ -2,75 +2,76 @@
  * Emily D'Alba
  */
 //import java.io.*;
-public class BubbleSort 
+public class SelectionSort 
 {
-    public static String [] stringBubbleSort(String [] arr)
+    public static int [] intSelectionSort(int [] arr)
     {
         long startTime = System.nanoTime();
         for(int i = 0; i < arr.length - 1; i++)
         {
-            for(int j = 0; j < arr.length - 1 - i; j++)
+            int minPos = i;
+            for(int j = i+1; j < arr.length; j ++)
             {
-                //if((int) arr[j].charAt(0) > (int) arr[j+1].charAt(0)) //not used because strings have length greater than one
-                if(priorityString(arr[j], arr[j+1]))
+                if(arr[j] < arr[minPos])
                 {
-                    String temp = arr[j];
-                    arr[j] = arr[j+1];
-                    arr[j+1] = temp; 
+                    int temp = arr[minPos];
+                    arr[minPos] = arr[j];
+                    arr[j] = temp;
                 }
             }
         }
         long endTime = System.nanoTime();
         long time = (endTime - startTime);
-        System.out.println("Run Time: " + time);
+        System.out.println("Sorting time " + time);
+        return arr;
+    }
+    public static double [] doubleSelectionSort(double [] arr)
+    {
+        long startTime = System.nanoTime();
+        for(int i = 0; i < arr.length - 1; i++)
+        {
+            int minPos = i;
+            for(int j = i+1; j < arr.length; j ++)
+            {
+                if(arr[j] < arr[minPos])
+                {
+                    double temp = arr[minPos];
+                    arr[minPos] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+        long endTime = System.nanoTime();
+        long time = (endTime - startTime);
+        System.out.println("Sorting time " + time);
         return arr;
     }
 
-    public static double [] doubleBubbleSort(double [] arr)
+    public static String [] stringSelectionSort(String [] arr)
     {
         long startTime = System.nanoTime();
         for(int i = 0; i < arr.length - 1; i++)
         {
-            for(int j = 0; j < arr.length - 1 - i; j++)
+            int minPos = i;
+            for(int j = i+1; j < arr.length; j ++)
             {
-                if(arr[j] > arr[j+1])
+                //if((int)arr[j].charAt(0) < (int)arr[minPos].charAt(0)) //is not used because length is greater than 0
+                if(priorityString(arr[j], arr[minPos]))
                 {
-                    double temp = arr[j];
-                    arr[j] = arr[j+1];
-                    arr[j+1] = temp; 
+                    String temp = arr[minPos];
+                    arr[minPos] = arr[j];
+                    arr[j] = temp;
                 }
             }
         }
         long endTime = System.nanoTime();
         long time = (endTime - startTime);
-        System.out.println("Run Time: " + time);
-        return arr;
-    }
-
-    public static int [] intBubbleSort(int [] arr)
-    {
-        long startTime = System.nanoTime();
-        for(int i = 0; i < arr.length - 1; i++)
-        {
-            for(int j = 0; j < arr.length - 1 - i; j++)
-            {
-                if(arr[j] > arr[j+1])
-                {
-                    int temp = arr[j];
-                    arr[j] = arr[j+1];
-                    arr[j+1] = temp; 
-                }
-            }
-        }
-        long endTime = System.nanoTime();
-        long time = (endTime - startTime);
-        System.out.println("Run Time: " + time);
+        System.out.println("Sorting time " + time);
         return arr;
     }
 
     /**
-     * for string sorting method
-     * checks which string has alphabetical priority for comparision within sorting method 
+     * checks which string has alphabetical priority for comparision within sorting method =
      * @param s1 string one
      * @param s2 string two
      * @return true or false depening on priority
@@ -81,7 +82,7 @@ public class BubbleSort
         {
             if(s1.charAt(i) != s2.charAt(i)) //if letter is same itterates to next to check
             {
-                if((int)s1.charAt(i) > (int) s1.charAt(i))//checks which is higher alphabetically according to ASCII
+                if((int)s1.charAt(i) < (int) s1.charAt(i))//checks which is higher alphabetically according to ASCII
                 {
                     return true; //returns true
                 }
