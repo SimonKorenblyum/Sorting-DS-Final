@@ -1,3 +1,7 @@
+/**
+ * Emily D'Alba
+ */
+import java.io.*;
 public class HeapSort 
 {
     public static String [] stringHeapSort(String [] arr)

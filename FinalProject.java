@@ -9,7 +9,7 @@ public class FinalProject
         iArr1a[2] = 4;
         iArr1a[3] = 3;
         System.out.println("int selection sort");
-        int [] iArr1b =intSelectionSort.intSelectionSort(iArr1a);
+        int [] iArr1b =SelectionSort.intSelectionSort(iArr1a);
         for(int i = 0; i < 4; i++)
         {
             System.out.print(iArr1b[i] + "  ");
@@ -51,7 +51,7 @@ public class FinalProject
         dArr1a[2] = 1.4;
         dArr1a[3] = 1.3;
         System.out.println("double selection sort");
-        double [] dArr1b = doubleSelectionSort.doubleSelectionSort(dArr1a);
+        double [] dArr1b = SelectionSort.doubleSelectionSort(dArr1a);
         for(int i = 0; i < 4; i++)
         {
             System.out.print(dArr1b[i] + "  ");
@@ -86,27 +86,27 @@ public class FinalProject
         }
         System.out.println("\n\n");
 
-        //char seletion sort
-        char [] cArr1a = new char [4];
-        cArr1a[0] = 'b';
-        cArr1a[1] = 'd';
-        cArr1a[2] = 'a';
-        cArr1a[3] = 'c';
+        //String seletion sort
+        String [] cArr1a = new String [4];
+        cArr1a[0] = "b";
+        cArr1a[1] = "d";
+        cArr1a[2] = "a";
+        cArr1a[3] = "c";
         System.out.println("char selection sort");
-        char [] cArr1b = charSelectionSort.charSelectionSort(cArr1a);
+        String [] cArr1b = SelectionSort.stringSelectionSort(cArr1a);
         for(int i = 0; i < 4; i++)
         {
             System.out.print(cArr1b[i] + "  ");
         }
         System.out.println("\n\n");
 
-        //char bubble sort
+        //String bubble sort
         String [] cArr2a = new String [4];
         cArr2a[0] = "b";
         cArr2a[1] = "d";
         cArr2a[2] = "a";
         cArr2a[3] = "c";
-        System.out.println("char bubble sort");
+        System.out.println("String bubble sort");
         String [] cArr2b = BubbleSort.stringBubbleSort(cArr2a);
         for(int i = 0; i < 4; i++)
         {
