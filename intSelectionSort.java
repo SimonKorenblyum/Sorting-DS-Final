@@ -18,7 +18,7 @@ public class intSelectionSort
             }
         }
         long endTime = System.nanoTime();
-        long time = (endTime - startTime)/1000000;
+        long time = (endTime - startTime);
         System.out.println("Sorting time " + time);
         return arr;
     }
