@@ -31,11 +31,13 @@ public class HeapSort
         int maxPos = rootPos; //sets max to root of subtree to later compare to left and right child
         int leftCPos = 2 * rootPos + 2; //gets pos to left child 
         int rightCPos = 2 * rootPos + 1; 
-        if(leftCPos < length && (int)arrs[leftCPos].charAt(0) > (int)arrs[maxPos].charAt(0))
+        //if(leftCPos < length && (int)arrs[leftCPos].charAt(0) > (int)arrs[maxPos].charAt(0)) //is not used because string length is greater than 0
+        if(leftCPos < length && priorityString(arrs[leftCPos], arrs[maxPos]))
         {
             maxPos = leftCPos;
         }
-        if(rightCPos < length && (int)arrs[rightCPos].charAt(0) > (int)arrs[maxPos].charAt(0))
+        //if(rightCPos < length && (int)arrs[rightCPos].charAt(0) > (int)arrs[maxPos].charAt(0)) //is not used because string length is greater than 0
+        if(rightCPos < length && priorityString(arrs[rightCPos], arrs[leftCPos]))
         {
             maxPos = rightCPos;
         }
@@ -137,5 +139,30 @@ public class HeapSort
             arrs[maxPos] = temp;
             iHeapify(arrs, maxPos, length);
         }
+    }
+
+    /**
+     * checks which string has alphabetical priority for comparision within sorting method =
+     * @param s1 string one
+     * @param s2 string two
+     * @return true or false depening on priority
+     */
+    public static boolean priorityString(String s1, String s2) //if first is higher number than second  length of 7
+    {
+        for(int i = 0; i < 7; i++) //checks each letter, set to 7 bc all strings have length of 7
+        {
+            if(s1.charAt(i) != s2.charAt(i)) //if letter is same itterates to next to check
+            {
+                if((int)s1.charAt(i) > (int) s1.charAt(i))//checks which is higher alphabetically according to ASCII
+                {
+                    return true; //returns true
+                }
+                else
+                {
+                    return false; //returns false
+                }
+            }
+        }
+        return false; //if string is same it returns false 
     }
 }
