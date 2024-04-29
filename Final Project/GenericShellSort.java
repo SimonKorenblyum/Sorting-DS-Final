@@ -14,7 +14,7 @@ public class GenericShellSort {
         shellSort(array);
     }
 
-    private static void shellSort(int[] array) {
+    public static void shellSort(int[] array) {
         int n = array.length;
         for (int gap = n / 2; gap > 0; gap /= 2) {
             for (int i = gap; i < n; i++) {
@@ -28,7 +28,7 @@ public class GenericShellSort {
         }
     }
 
-    private static void shellSort(double[] array) {
+    public static void shellSort(double[] array) {
         int n = array.length;
         for (int gap = n / 2; gap > 0; gap /= 2) {
             for (int i = gap; i < n; i++) {
@@ -42,7 +42,7 @@ public class GenericShellSort {
         }
     }
 
-    private static void shellSort(String[] array) {
+    public static void shellSort(String[] array) {
         int n = array.length;
         for (int gap = n / 2; gap > 0; gap /= 2) {
             for (int i = gap; i < n; i++) {
@@ -60,7 +60,7 @@ public class GenericShellSort {
         testSorting();
     }
 
-    private static void testSorting() {
+    public static void testSorting() {
         int[] sizes = {10, 100, 1000, 10000, 50000, 100000, 500000};
         Random random = new Random();
         for (int size : sizes) {
@@ -92,28 +92,28 @@ public class GenericShellSort {
         }
     }
 
-    private static void timeSorting(int[] array, String description) {
+    public static void timeSorting(int[] array, String description) {
         long startTime = System.nanoTime();
         sort(array);
         long endTime = System.nanoTime();
         System.out.println(description + " array took: " + (endTime - startTime) + " ns");
     }
 
-    private static void timeSorting(double[] array, String description) {
+    public static void timeSorting(double[] array, String description) {
         long startTime = System.nanoTime();
         sort(array);
         long endTime = System.nanoTime();
         System.out.println(description + " array took: " + (endTime - startTime) + " ns");
     }
 
-    private static void timeSorting(String[] array, String description) {
+    public static void timeSorting(String[] array, String description) {
         long startTime = System.nanoTime();
         sort(array);
         long endTime = System.nanoTime();
         System.out.println(description + " array took: " + (endTime - startTime) + " ns");
     }
 
-    private static void shuffleArray(int[] array, Random random) {
+    public static void shuffleArray(int[] array, Random random) {
         for (int i = array.length - 1; i > 0; i--) {
             int index = random.nextInt(i + 1);
             int a = array[index];
@@ -122,7 +122,7 @@ public class GenericShellSort {
         }
     }
 
-    private static void shuffleArray(double[] array, Random random) {
+    public static void shuffleArray(double[] array, Random random) {
         for (int i = array.length - 1; i > 0; i--) {
             int index = random.nextInt(i + 1);
             double a = array[index];
@@ -131,7 +131,7 @@ public class GenericShellSort {
         }
     }
 
-    private static void shuffleArray(String[] array, Random random) {
+    public static void shuffleArray(String[] array, Random random) {
         for (int i = array.length - 1; i > 0; i--) {
             int index = random.nextInt(i + 1);
             String a = array[index];
@@ -140,7 +140,7 @@ public class GenericShellSort {
         }
     }
 
-    private static int[] generateSequentialIntegers(int size) {
+    public static int[] generateSequentialIntegers(int size) {
         int[] array = new int[size];
         for (int i = 0; i < size; i++) {
             array[i] = i + 1;
@@ -148,7 +148,7 @@ public class GenericShellSort {
         return array;
     }
 
-    private static double[] generateSequentialDoubles(int size) {
+    public static double[] generateSequentialDoubles(int size) {
         double[] array = new double[size];
         for (int i = 0; i < size; i++) {
             array[i] = i + 1.0;
@@ -156,7 +156,7 @@ public class GenericShellSort {
         return array;
     }
 
-    private static String[] generateSequentialStrings(int size) {
+    public static String[] generateSequentialStrings(int size) {
         String[] array = new String[size];
         for (int i = 0; i < size; i++) {
             array[i] = "String " + (i + 1);

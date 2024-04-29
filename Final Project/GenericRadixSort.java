@@ -3,8 +3,8 @@ import java.util.List;
 import java.util.Random;
 
 public class GenericRadixSort {
-    private static final int[] SIZES = {10, 100, 1000, 10000, 50000, 100000, 500000};
-    private static final Random random = new Random();
+    public static final int[] SIZES = {10, 100, 1000, 10000, 50000, 100000, 500000};
+    public static final Random random = new Random();
 
     public static void main(String[] args) {
         for (int size : SIZES) {
@@ -24,7 +24,7 @@ public class GenericRadixSort {
         }
     }
 
-    private static void timeSorting(Integer[] array, String description) {
+    public static void timeSorting(Integer[] array, String description) {
         // Unsorted timing
         shuffleArray(array);
         long startTime = System.nanoTime();
@@ -39,7 +39,7 @@ public class GenericRadixSort {
         System.out.println(description + " Sorted array took: " + (endTime - startTime) + " ns");
     }
 
-    private static void timeSortingDoubles(Double[] array, String description) {
+    public static void timeSortingDoubles(Double[] array, String description) {
         // Unsorted timing
         shuffleArray(array);
         long startTime = System.nanoTime();
@@ -54,7 +54,7 @@ public class GenericRadixSort {
         System.out.println(description + " Sorted array took: " + (endTime - startTime) + " ns");
     }
 
-    private static void timeSortingStrings(String[] array, String description) {
+    public static void timeSortingStrings(String[] array, String description) {
         // Unsorted timing
         shuffleArray(array);
         long startTime = System.nanoTime();
@@ -101,7 +101,6 @@ public class GenericRadixSort {
 
     public static void radixSortDoubles(Double[] array) {
         // This method assumes the doubles are non-negative and scales them up
-        // This is a placeholder; actual implementation may need to consider more factors
         final long SCALING_FACTOR = 1000000L; // Example scaling factor
         Long[] temp = new Long[array.length];
         for (int i = 0; i < array.length; i++) {
@@ -146,7 +145,7 @@ public class GenericRadixSort {
         }
     }    
 
-    private static void radixSortLongs(Long[] array) {
+    public static void radixSortLongs(Long[] array) {
         // Similar to radixSortIntegers, but for Longs
         final int RADIX = 10;
         List<Long>[] bucket = new ArrayList[RADIX];
@@ -177,7 +176,7 @@ public class GenericRadixSort {
         }
     }
 
-    private static Integer[] generateSequentialIntegers(int size) {
+    public static Integer[] generateSequentialIntegers(int size) {
         Integer[] array = new Integer[size];
         for (int i = 0; i < size; i++) {
             array[i] = i + 1;
@@ -185,7 +184,7 @@ public class GenericRadixSort {
         return array;
     }
 
-    private static Double[] generateSequentialDoubles(int size) {
+    public static Double[] generateSequentialDoubles(int size) {
         Double[] array = new Double[size];
         for (int i = 0; i < size; i++) {
             array[i] = i + 1.0;
@@ -193,7 +192,7 @@ public class GenericRadixSort {
         return array;
     }
 
-    private static String[] generateSequentialStrings(int size) {
+    public static String[] generateSequentialStrings(int size) {
         String[] array = new String[size];
         for (int i = 0; i < size; i++) {
             array[i] = String.format("String %d", i + 1);
@@ -201,7 +200,7 @@ public class GenericRadixSort {
         return array;
     }
 
-    private static void shuffleArray(Integer[] array) {
+    public static void shuffleArray(Integer[] array) {
         for (int i = array.length - 1; i > 0; i--) {
             int index = random.nextInt(i + 1);
             int a = array[index];
@@ -210,7 +209,7 @@ public class GenericRadixSort {
         }
     }
 
-    private static void shuffleArray(Double[] array) {
+    public static void shuffleArray(Double[] array) {
         for (int i = array.length - 1; i > 0; i--) {
             int index = random.nextInt(i + 1);
             double a = array[index];
@@ -219,7 +218,7 @@ public class GenericRadixSort {
         }
     }
 
-    private static void shuffleArray(String[] array) {
+    public static void shuffleArray(String[] array) {
         for (int i = array.length - 1; i > 0; i--) {
             int index = random.nextInt(i + 1);
             String a = array[index];
