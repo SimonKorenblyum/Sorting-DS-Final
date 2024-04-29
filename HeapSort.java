@@ -6,11 +6,11 @@ public class HeapSort
 {
     public static String [] stringHeapSort(String [] arr)
     {
-        long startTime = System.nanoTime();
+        long startTime = System.nanoTime(); //starts function of recording time
         int length = arr.length; //gets length to make easier to acess
-        for(int i = length / 2 - 1; i>= 0; i--)
+        for(int i = length / 2 - 1; i>= 0; i--) //rearanges array to heap
         {
-            sHeapify(arr, i, length);
+            sHeapify(arr, i, length); 
         }
 
         for(int j = length - 1; j>= 0; j--)
@@ -26,6 +26,12 @@ public class HeapSort
         return arr;
     }
 
+    /**
+     * Heapifys string array, treats given pos as root of own tree
+     * @param arrs array to be heapified
+     * @param rootPos "root" of tree
+     * @param length length of array
+     */
     public static void sHeapify(String [] arrs, int rootPos, int length)
     {
         int maxPos = rootPos; //sets max to root of subtree to later compare to left and right child
@@ -53,9 +59,9 @@ public class HeapSort
 
     public static double[] doubleHeapSort(double[] arr)
     {
-        long startTime = System.nanoTime();
+        long startTime = System.nanoTime(); //starts function of recording time
         int length = arr.length; //gets length to make easier to acess
-        for(int i = length / 2 - 1; i>= 0; i--)
+        for(int i = length / 2 - 1; i>= 0; i--) //rearanges array to heap
         {
             dHeapify(arr, i, length);
         }
@@ -73,6 +79,12 @@ public class HeapSort
         return arr;
     }
 
+    /**
+     * Heapifys double array, treats given pos as root of own tree
+     * @param arrs array to be heapified
+     * @param rootPos "root" of tree
+     * @param length length of array
+     */
     public static void dHeapify(double [] arrs, int rootPos, int length)
     {
         int maxPos = rootPos; //sets max to root of subtree to later compare to left and right child
@@ -98,9 +110,9 @@ public class HeapSort
 
     public static int[] intHeapSort(int[] arr)
     {
-        long startTime = System.nanoTime();
+        long startTime = System.nanoTime(); //starts function of recording time
         int length = arr.length; //gets length to make easier to acess
-        for(int i = length / 2 - 1; i>= 0; i--)
+        for(int i = length / 2 - 1; i>= 0; i--) //rearanges array to heap
         {
             iHeapify(arr, i, length);
         }
@@ -118,6 +130,12 @@ public class HeapSort
         return arr;
     }
 
+    /**
+     * Heapifys int array, treats given pos as root of own tree
+     * @param arrs array to be heapified
+     * @param rootPos "root" of tree
+     * @param length length of array
+     */
     public static void iHeapify(int [] arrs, int rootPos, int length)
     {
         int maxPos = rootPos; //sets max to root of subtree to later compare to left and right child
