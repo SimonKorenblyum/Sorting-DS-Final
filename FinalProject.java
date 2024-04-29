@@ -37,7 +37,7 @@ public class FinalProject
         iArr3a[2] = 4;
         iArr3a[3] = 3;
         System.out.println("int heap sort");
-        int [] iArr3b =intHeapSort.intHeapSort(iArr3a);
+        int [] iArr3b =HeapSort.intHeapSort(iArr3a);
         for(int i = 0; i < 4; i++)
         {
             System.out.print(iArr3b[i] + "  ");
@@ -79,7 +79,7 @@ public class FinalProject
         dArr3a[2] = 1.4;
         dArr3a[3] = 1.3;
         System.out.println("double heap sort");
-        double [] dArr3b = doubleHeapSort.doubleHeapSort(dArr3a);
+        double [] dArr3b = HeapSort.doubleHeapSort(dArr3a);
         for(int i = 0; i < 4; i++)
         {
             System.out.print(dArr3b[i] + "  ");
@@ -114,14 +114,14 @@ public class FinalProject
         }
         System.out.println("\n\n");
 
-        //char heap sort
-        char [] cArr3a = new char [4];
-        cArr3a[0] = 'b';
-        cArr3a[1] = 'd';
-        cArr3a[2] = 'a';
-        cArr3a[3] = 'c';
-        System.out.println("char bubble sort");
-        char [] cArr3b = charHeapSort.charHeapSort(cArr3a);
+        //string heap sort
+        String [] cArr3a = new String [4];
+        cArr3a[0] = "b";
+        cArr3a[1] = "d";
+        cArr3a[2] = "a";
+        cArr3a[3] = "c";
+        System.out.println("String heap sort");
+        String [] cArr3b = HeapSort.stringHeapSort(cArr3a);
         for(int i = 0; i < 4; i++)
         {
             System.out.print(cArr3b[i] + "  ");
