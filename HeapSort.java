@@ -1,7 +1,7 @@
 /**
  * Emily D'Alba
  */
-import java.io.*;
+//import java.io.*;
 public class HeapSort 
 {
     public static String [] stringHeapSort(String [] arr)
@@ -37,7 +37,7 @@ public class HeapSort
             maxPos = leftCPos;
         }
         //if(rightCPos < length && (int)arrs[rightCPos].charAt(0) > (int)arrs[maxPos].charAt(0)) //is not used because string length is greater than 0
-        if(rightCPos < length && priorityString(arrs[rightCPos], arrs[leftCPos]))
+        if(rightCPos < length && priorityString(arrs[rightCPos], arrs[maxPos]))
         {
             maxPos = rightCPos;
         }

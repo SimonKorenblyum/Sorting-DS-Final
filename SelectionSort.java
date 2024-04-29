@@ -1,7 +1,7 @@
 /*
  * Emily D'Alba
  */
-import java.io.*;
+//import java.io.*;
 public class SelectionSort 
 {
     public static int [] intSelectionSort(int [] arr)
@@ -46,9 +46,10 @@ public class SelectionSort
         System.out.println("Sorting time " + time);
         return arr;
     }
-    
+
     public static String [] stringSelectionSort(String [] arr)
     {
+        long startTime = System.nanoTime();
         for(int i = 0; i < arr.length - 1; i++)
         {
             int minPos = i;
@@ -63,6 +64,9 @@ public class SelectionSort
                 }
             }
         }
+        long endTime = System.nanoTime();
+        long time = (endTime - startTime);
+        System.out.println("Sorting time " + time);
         return arr;
     }
 
