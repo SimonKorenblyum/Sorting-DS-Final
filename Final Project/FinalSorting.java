@@ -4,42 +4,48 @@ public class FinalSorting {
     
     public static void main(String[] args) {
         int[] sizes = {10, 100, 1000, 10000, 50000, 100000, 500000};
-
+    
         for (int size : sizes) {
             System.out.println("Timing for size: " + size);
-
+    
             // Generate and shuffle arrays using arrCreator methods
             int[] intArray = arrCreator.intArrR(size);
             double[] doubleArray = arrCreator.doubleArrR(size);
             String[] stringArray = arrCreator.stringArrR(size);
-
+    
             // Sort and time sorting for unsorted arrays
             timeSorting(intArray, "Integer (Unsorted)", "ShellSort");
             timeSorting(doubleArray, "Double (Unsorted)", "ShellSort");
             timeSorting(stringArray, "String (Unsorted)", "ShellSort");
-
+    
+            timeSorting(intArray, "Integer (Unsorted)", "RadixSort");
+            timeSorting(intArray, "Integer (Unsorted)", "MergeSort");
+    
             // Sort arrays again to test timing on already sorted arrays
             Arrays.sort(intArray);
             Arrays.sort(doubleArray);
             Arrays.sort(stringArray);
-
+    
             timeSorting(intArray, "Integer (Sorted)", "ShellSort");
             timeSorting(doubleArray, "Double (Sorted)", "ShellSort");
             timeSorting(stringArray, "String (Sorted)", "ShellSort");
-
-            // Timing RadixSort for Integer array (unsorted and sorted)
-            intArray = arrCreator.intArrR(size); // Re-generate unsorted array
-            timeSorting(intArray, "Integer (Unsorted)", "RadixSort");
-            Arrays.sort(intArray); // Re-sort for sorted condition testing
+    
             timeSorting(intArray, "Integer (Sorted)", "RadixSort");
-
-            // Timing MergeSort for Integer array (unsorted and sorted)
-            intArray = arrCreator.intArrR(size); // Re-generate unsorted array
-            timeSorting(intArray, "Integer (Unsorted)", "MergeSort");
-            Arrays.sort(intArray); // Re-sort for sorted condition testing
             timeSorting(intArray, "Integer (Sorted)", "MergeSort");
+    
+            // Additional implementations for Radix and Merge sorts for double and string types
+            timeSorting(doubleArray, "Double (Unsorted)", "RadixSort");
+            timeSorting(doubleArray, "Double (Sorted)", "RadixSort");
+            timeSorting(stringArray, "String (Unsorted)", "RadixSort");
+            timeSorting(stringArray, "String (Sorted)", "RadixSort");
+    
+            timeSorting(doubleArray, "Double (Unsorted)", "MergeSort");
+            timeSorting(doubleArray, "Double (Sorted)", "MergeSort");
+            timeSorting(stringArray, "String (Unsorted)", "MergeSort");
+            timeSorting(stringArray, "String (Sorted)", "MergeSort");
         }
     }
+    
     // ShellSort algorithm implementations
     public static void shellSort(int[] array) {
         int n = array.length;
