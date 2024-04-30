@@ -14,7 +14,7 @@ public class FinalProject
         int [] intArr500000a = arrCreator.intArrR(500000);
 
         //unsorted int bubble sort
-        System.out.println("Integer Sorting methods: ");
+       /* System.out.println("Integer Sorting methods: ");
         System.out.println("Bubble Sort (Unsorted): ");
         System.out.print("Int bubble sort 10 (US) : ");
         int [] intArr10bs = BubbleSort.intBubbleSort(intArr10a);
@@ -228,8 +228,10 @@ public class FinalProject
         System.out.print("double Heap sort 100000 (S) : ");
         HeapSort.doubleHeapSort(doubleArr100000hs);
         System.out.print("double Heap sort 500000 (S) : ");
-        HeapSort.doubleHeapSort(doubleArr500000hs);
+        HeapSort.doubleHeapSort(doubleArr500000hs);*/
         
+        int[] sizes = {10};
+
         for (int size : sizes) {
             System.out.println("Timing for size: " + size);
 
