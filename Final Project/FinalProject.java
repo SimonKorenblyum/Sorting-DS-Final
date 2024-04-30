@@ -378,7 +378,6 @@ public class FinalProject
             Arrays.sort(stringArray);
             FinalSorting.timeSorting(stringArray, "String (Sorted)", "RadixSort");
     
-            // Regenerate and time MergeSort for Integer, Double, and String arrays
             intArray = arrCreator.intArrR(size);
             doubleArray = arrCreator.doubleArrR(size);
             stringArray = arrCreator.stringArrR(size);
