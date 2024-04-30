@@ -29,12 +29,12 @@ public class quickSort
         return (i + 1);
     }
 
-    static void dQuickSort(double[] arr, int low, int high)
+    static void doubleQuickSort(double[] arr, int low, int high)
     {
         if (low < high) {
             int pi = dPartition(arr, low, high);
-            dQuickSort(arr, low, pi - 1);
-            dQuickSort(arr, pi + 1, high);
+            doubleQuickSort(arr, low, pi - 1);
+            doubleQuickSort(arr, pi + 1, high);
         }
     }
     static int dPartition(double[] arr, int low, int high)
