@@ -6,67 +6,67 @@ public class SelectionSort
 {
     public static int [] intSelectionSort(int [] arr)
     {
-        long startTime = System.nanoTime();
-        for(int i = 0; i < arr.length - 1; i++)
+        long startTime = System.nanoTime(); //starts recording start time 
+        for(int i = 0; i < arr.length - 1; i++) //shifts elements
         {
             int minPos = i;
-            for(int j = i+1; j < arr.length; j ++)
+            for(int j = i+1; j < arr.length; j ++) //finds minimum element
             {
-                if(arr[j] < arr[minPos])
+                if(arr[j] < arr[minPos]) //checks if min
                 {
                     int temp = arr[minPos];
-                    arr[minPos] = arr[j];
+                    arr[minPos] = arr[j]; //swaps first element in bounds to found minimum 
                     arr[j] = temp;
                 }
             }
         }
-        long endTime = System.nanoTime();
+        long endTime = System.nanoTime(); //ends recording time 
         long time = (endTime - startTime);
-        System.out.println("Sorting time " + time);
+        System.out.println("Sorting time " + time); //returns print time
         return arr;
     }
     public static double [] doubleSelectionSort(double [] arr)
     {
-        long startTime = System.nanoTime();
-        for(int i = 0; i < arr.length - 1; i++)
+        long startTime = System.nanoTime(); //starts recording start time 
+        for(int i = 0; i < arr.length - 1; i++) //shifts elements
         {
             int minPos = i;
-            for(int j = i+1; j < arr.length; j ++)
+            for(int j = i+1; j < arr.length; j ++) //finds minimum element
             {
-                if(arr[j] < arr[minPos])
+                if(arr[j] < arr[minPos]) //checks if min
                 {
                     double temp = arr[minPos];
-                    arr[minPos] = arr[j];
+                    arr[minPos] = arr[j]; //swaps first element in bounds to found minimum 
                     arr[j] = temp;
                 }
             }
         }
-        long endTime = System.nanoTime();
+        long endTime = System.nanoTime(); //ends recording time
         long time = (endTime - startTime);
-        System.out.println("Sorting time " + time);
+        System.out.println("Sorting time " + time); //prints run time
         return arr;
     }
 
     public static String [] stringSelectionSort(String [] arr)
     {
-        long startTime = System.nanoTime();
-        for(int i = 0; i < arr.length - 1; i++)
+        long startTime = System.nanoTime(); //starts recording start time
+        for(int i = 0; i < arr.length - 1; i++) //shifts elements
         {
             int minPos = i;
-            for(int j = i+1; j < arr.length; j ++)
+            for(int j = i+1; j < arr.length; j ++) //finds minimum element
             {
                 //if((int)arr[j].charAt(0) < (int)arr[minPos].charAt(0)) //is not used because length is greater than 0
                 if(priorityString(arr[j], arr[minPos]))
                 {
                     String temp = arr[minPos];
-                    arr[minPos] = arr[j];
+                    arr[minPos] = arr[j]; //swaps first element in bounds to found minimum 
                     arr[j] = temp;
                 }
             }
         }
-        long endTime = System.nanoTime();
+        long endTime = System.nanoTime(); //ends recording time
         long time = (endTime - startTime);
-        System.out.println("Sorting time " + time);
+        System.out.println("Sorting time " + time); //prints run time
         return arr;
     }
 
