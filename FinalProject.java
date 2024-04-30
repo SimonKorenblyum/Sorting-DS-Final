@@ -44,8 +44,8 @@ public class FinalProject
         BubbleSort.intBubbleSort(intArr50000bs);
         System.out.print("Int bubble sort 100000 (S) : ");
         BubbleSort.intBubbleSort(intArr100000bs);
-        System.out.print("Int bubble sort 500000 (S) : ");
-        BubbleSort.intBubbleSort(intArr500000bs);
+        //System.out.print("Int bubble sort 500000 (S) : ");
+        //BubbleSort.intBubbleSort(intArr500000bs);
         
         //unsorted int selection sort
         System.out.println("Selection Sort (Unsorted): ");
