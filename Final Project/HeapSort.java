@@ -13,12 +13,12 @@ public class HeapSort
             sHeapify(arr, i, length); 
         }
 
-        for(int j = length - 1; j>= 0; j--)
+        for(int j = length - 1; j>= 0; j--) //remove elements and move root to end 
         {
             String temp = arr[0];
-            arr[0] = arr[j];
+            arr[0] = arr[j];// moving root to end 
             arr[j] = temp;
-            sHeapify(arr, 0, j);
+            sHeapify(arr, 0, j); //call heapify on reduced 
         }
         long endTime = System.nanoTime();
         long time = (endTime - startTime);
@@ -36,19 +36,19 @@ public class HeapSort
     {
         int maxPos = rootPos; //sets max to root of subtree to later compare to left and right child
         int leftCPos = 2 * rootPos + 2; //gets pos to left child 
-        int rightCPos = 2 * rootPos + 1; 
+        int rightCPos = 2 * rootPos + 1;  //gets pos to the right child
         //if(leftCPos < length && (int)arrs[leftCPos].charAt(0) > (int)arrs[maxPos].charAt(0)) //is not used because string length is greater than 0
-        if(leftCPos < length && priorityString(arrs[leftCPos], arrs[maxPos]))
+        if(leftCPos < length && priorityString(arrs[leftCPos], arrs[maxPos])) //if left child is bigger than root
         {
             maxPos = leftCPos;
         }
         //if(rightCPos < length && (int)arrs[rightCPos].charAt(0) > (int)arrs[maxPos].charAt(0)) //is not used because string length is greater than 0
-        if(rightCPos < length && priorityString(arrs[rightCPos], arrs[maxPos]))
+        if(rightCPos < length && priorityString(arrs[rightCPos], arrs[maxPos])) //if right child is bigger than root
         {
             maxPos = rightCPos;
         }
 
-        if(rootPos != maxPos)
+        if(rootPos != maxPos) //if largest isnt root recursivly heapify subroot
         {
             String temp = arrs[rootPos];
             arrs[rootPos] = arrs[maxPos];
@@ -66,12 +66,12 @@ public class HeapSort
             dHeapify(arr, i, length);
         }
 
-        for(int j = length - 1; j>= 0; j--)
+        for(int j = length - 1; j>= 0; j--) //remove elements and move root to end
         {
             double temp = arr[0];
-            arr[0] = arr[j];
+            arr[0] = arr[j]; // moving root to end 
             arr[j] = temp;
-            dHeapify(arr, 0, j);
+            dHeapify(arr, 0, j); //call heapify on reduced 
         }
         long endTime = System.nanoTime();
         long time = (endTime - startTime);
@@ -89,17 +89,17 @@ public class HeapSort
     {
         int maxPos = rootPos; //sets max to root of subtree to later compare to left and right child
         int leftCPos = 2 * rootPos + 2; //gets pos to left child 
-        int rightCPos = 2 * rootPos + 1; 
-        if(leftCPos < length && arrs[leftCPos] > arrs[maxPos])
+        int rightCPos = 2 * rootPos + 1; //gets pos to right child 
+        if(leftCPos < length && arrs[leftCPos] > arrs[maxPos]) //if left child is bigger than root
         {
             maxPos = leftCPos;
         }
-        if(rightCPos < length && arrs[rightCPos] > arrs[maxPos])
+        if(rightCPos < length && arrs[rightCPos] > arrs[maxPos]) //if right child is bigger than root
         {
             maxPos = rightCPos;
         }
 
-        if(rootPos != maxPos)
+        if(rootPos != maxPos) //if largest isnt root recursivly heapify subroot
         {
             double temp = arrs[rootPos];
             arrs[rootPos] = arrs[maxPos];
@@ -117,12 +117,12 @@ public class HeapSort
             iHeapify(arr, i, length);
         }
 
-        for(int j = length - 1; j>= 0; j--)
+        for(int j = length - 1; j>= 0; j--) //remove elements and move root to end
         {
             int temp = arr[0];
-            arr[0] = arr[j];
+            arr[0] = arr[j]; // moving root to end 
             arr[j] = temp;
-            iHeapify(arr, 0, j);
+            iHeapify(arr, 0, j); //call heapify on reduced 
         }
         long endTime = System.nanoTime();
         long time = (endTime - startTime);
@@ -140,17 +140,17 @@ public class HeapSort
     {
         int maxPos = rootPos; //sets max to root of subtree to later compare to left and right child
         int leftCPos = 2 * rootPos + 2; //gets pos to left child 
-        int rightCPos = 2 * rootPos + 1; 
-        if(leftCPos < length && arrs[leftCPos] > arrs[maxPos])
+        int rightCPos = 2 * rootPos + 1;  //gets pos to right child 
+        if(leftCPos < length && arrs[leftCPos] > arrs[maxPos]) //if left child is bigger than root
         {
             maxPos = leftCPos;
         }
-        if(rightCPos < length && arrs[rightCPos] > arrs[maxPos])
+        if(rightCPos < length && arrs[rightCPos] > arrs[maxPos]) //if right child is bigger than root
         {
             maxPos = rightCPos;
         }
 
-        if(rootPos != maxPos)
+        if(rootPos != maxPos) //if largest isnt root recursivly heapify subroot
         {
             int temp = arrs[rootPos];
             arrs[rootPos] = arrs[maxPos];
