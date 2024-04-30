@@ -22,7 +22,7 @@ public class GenericMergeSort {
     }
 
     // Generic merge function
-    private static <T extends Comparable<T>> void merge(T[] result, T[] left, T[] right) {
+    public static <T extends Comparable<T>> void merge(T[] result, T[] left, T[] right) {
         int i = 0, j = 0, k = 0;
         while (i < left.length && j < right.length) {
             if (left[i].compareTo(right[j]) <= 0) {
@@ -94,7 +94,7 @@ public class GenericMergeSort {
     }
 
     // Helper methods to generate data
-    private static Integer[] generateSequentialIntegers(int size) {
+    public static Integer[] generateSequentialIntegers(int size) {
         Integer[] array = new Integer[size];
         for (int i = 0; i < size; i++) {
             array[i] = i + 1;
@@ -102,7 +102,7 @@ public class GenericMergeSort {
         return array;
     }
 
-    private static Double[] generateSequentialDoubles(int size) {
+    public static Double[] generateSequentialDoubles(int size) {
         Double[] array = new Double[size];
         for (int i = 0; i < size; i++) {
             array[i] = (double) (i + 1);
@@ -110,7 +110,7 @@ public class GenericMergeSort {
         return array;
     }
 
-    private static String[] generateSequentialStrings(int size) {
+    public static String[] generateSequentialStrings(int size) {
         String[] array = new String[size];
         for (int i = 0; i < size; i++) {
             array[i] = "Number" + (i + 1);
@@ -118,16 +118,16 @@ public class GenericMergeSort {
         return array;
     }
 
-    private static Integer[] generateRandomIntegers(int size) {
+    public static Integer[] generateRandomIntegers(int size) {
         Random random = new Random();
         Integer[] array = new Integer[size];
         for (int i = 0; i < size; i++) {
-            array[i] = random.nextInt(size * 10); // or any range that suits your test
+            array[i] = random.nextInt(size * 10); 
         }
         return array;
     }
     
-    private static Double[] generateRandomDoubles(int size) {
+    public static Double[] generateRandomDoubles(int size) {
         Random random = new Random();
         Double[] array = new Double[size];
         for (int i = 0; i < size; i++) {
@@ -136,7 +136,7 @@ public class GenericMergeSort {
         return array;
     }
     
-    private static String[] generateRandomStrings(int size) {
+    public static String[] generateRandomStrings(int size) {
         Random random = new Random();
         String[] array = new String[size];
         for (int i = 0; i < size; i++) {
