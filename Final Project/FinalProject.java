@@ -1,7 +1,8 @@
+import java.util.*;
+
 public class FinalProject
 {
-    public static void main(String[] args) 
-    {
+    public static void main(String[] args) {
         //Testing integer sorting methods
         //creating random int arrays
         int [] intArr10a = arrCreator.intArrR(10);
@@ -115,6 +116,41 @@ public class FinalProject
         System.out.print("Int Heap sort 500000 (S) : ");
         HeapSort.intHeapSort(intArr500000hs);
 
-    }
+        int[] sizes = {10, 100, 1000, 10000, 50000, 100000, 500000};
 
+        for (int size : sizes) {
+            System.out.println("Timing for size: " + size);
+
+            // Generate and shuffle arrays using arrCreator methods
+            int[] intArray = arrCreator.intArrR(size);
+            double[] doubleArray = arrCreator.doubleArrR(size);
+            String[] stringArray = arrCreator.stringArrR(size);
+
+            // Sort and time sorting for unsorted arrays
+            FinalSorting.timeSorting(intArray, "Integer (Unsorted)", "ShellSort");
+            FinalSorting.timeSorting(doubleArray, "Double (Unsorted)", "ShellSort");
+            FinalSorting.timeSorting(stringArray, "String (Unsorted)", "ShellSort");
+
+            // Sort arrays again to test timing on already sorted arrays
+            Arrays.sort(intArray);
+            Arrays.sort(doubleArray);
+            Arrays.sort(stringArray);
+
+            FinalSorting.timeSorting(intArray, "Integer (Sorted)", "ShellSort");
+            FinalSorting.timeSorting(doubleArray, "Double (Sorted)", "ShellSort");
+            FinalSorting.timeSorting(stringArray, "String (Sorted)", "ShellSort");
+
+            // Timing RadixSort for Integer array (unsorted and sorted)
+            intArray = arrCreator.intArrR(size); // Re-generate unsorted array
+            FinalSorting.timeSorting(intArray, "Integer (Unsorted)", "RadixSort");
+            Arrays.sort(intArray); // Re-sort for sorted condition testing
+            FinalSorting.timeSorting(intArray, "Integer (Sorted)", "RadixSort");
+
+            // Timing MergeSort for Integer array (unsorted and sorted)
+            intArray = arrCreator.intArrR(size); // Re-generate unsorted array
+            FinalSorting.timeSorting(intArray, "Integer (Unsorted)", "MergeSort");
+            Arrays.sort(intArray); // Re-sort for sorted condition testing
+            FinalSorting.timeSorting(intArray, "Integer (Sorted)", "MergeSort");
+        }
+    }
 }

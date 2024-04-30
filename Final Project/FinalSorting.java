@@ -1,25 +1,17 @@
-import java.util.Random;
-import java.util.Arrays;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class FinalSorting {
     
     public static void main(String[] args) {
         int[] sizes = {10, 100, 1000, 10000, 50000, 100000, 500000};
-        Random random = new Random();
 
         for (int size : sizes) {
             System.out.println("Timing for size: " + size);
 
-            // Generate and shuffle arrays
-            int[] intArray = generateSequentialIntegers(size);
-            double[] doubleArray = generateSequentialDoubles(size);
-            String[] stringArray = generateSequentialStrings(size);
-
-            shuffleArray(intArray, random);
-            shuffleArray(doubleArray, random);
-            shuffleArray(stringArray, random);
+            // Generate and shuffle arrays using arrCreator methods
+            int[] intArray = arrCreator.intArrR(size);
+            double[] doubleArray = arrCreator.doubleArrR(size);
+            String[] stringArray = arrCreator.stringArrR(size);
 
             // Sort and time sorting for unsorted arrays
             timeSorting(intArray, "Integer (Unsorted)", "ShellSort");
@@ -35,14 +27,14 @@ public class FinalSorting {
             timeSorting(doubleArray, "Double (Sorted)", "ShellSort");
             timeSorting(stringArray, "String (Sorted)", "ShellSort");
 
-            // Testing Radix Sort and Merge Sort only for Integer arrays for simplicity
-            // Feel free to expand to Double and String if applicable methods for Radix/Merge sort are available
-            shuffleArray(intArray, random); // Re-shuffle for radix sort
+            // Timing RadixSort for Integer array (unsorted and sorted)
+            intArray = arrCreator.intArrR(size); // Re-generate unsorted array
             timeSorting(intArray, "Integer (Unsorted)", "RadixSort");
             Arrays.sort(intArray); // Re-sort for sorted condition testing
             timeSorting(intArray, "Integer (Sorted)", "RadixSort");
 
-            shuffleArray(intArray, random); // Re-shuffle for merge sort
+            // Timing MergeSort for Integer array (unsorted and sorted)
+            intArray = arrCreator.intArrR(size); // Re-generate unsorted array
             timeSorting(intArray, "Integer (Unsorted)", "MergeSort");
             Arrays.sort(intArray); // Re-sort for sorted condition testing
             timeSorting(intArray, "Integer (Sorted)", "MergeSort");
@@ -94,29 +86,33 @@ public class FinalSorting {
     // RadixSort algorithm implementations
     public static void radixSortIntegers(Integer[] array) {
         final int RADIX = 10;
-        List<Integer>[] bucket = new ArrayList[RADIX];
-        for (int i = 0; i < RADIX; i++) {
-            bucket[i] = new ArrayList<>();
+        List<Integer>[] buckets = new ArrayList[RADIX * 2];  // Increase bucket size to handle negatives separately
+        for (int i = 0; i < buckets.length; i++) {
+            buckets[i] = new ArrayList<>();
         }
-
+    
         boolean maxLength = false;
-        int tmp = -1, placement = 1;
+        int tmp, placement = 1;
         while (!maxLength) {
             maxLength = true;
-            for (Integer i : array) {
-                tmp = i / placement;
-                bucket[tmp % RADIX].add(i);
-                if (maxLength && tmp > 0) {
+    
+            // Place elements into buckets based on their current digit
+            for (Integer element : array) {
+                tmp = element / placement;
+                int bucketIndex = tmp % RADIX + RADIX;  // Shift index to avoid negative indices
+                buckets[bucketIndex].add(element);
+                if (maxLength && tmp != 0) {
                     maxLength = false;
                 }
             }
-
-            int a = 0;
-            for (int b = 0; b < RADIX; b++) {
-                for (Integer i : bucket[b]) {
-                    array[a++] = i;
+    
+            // Flatten the buckets back into the original array
+            int index = 0;
+            for (List<Integer> bucket : buckets) {
+                for (Integer element : bucket) {
+                    array[index++] = element;
                 }
-                bucket[b].clear();
+                bucket.clear();
             }
             placement *= RADIX;
         }
@@ -314,5 +310,45 @@ public class FinalSorting {
         }
         long endTime = System.nanoTime();
         System.out.println(description + " using " + method + " took: " + (endTime - startTime) + " ns");
+    }
+
+    public static int[] intArrR(int size) {
+        int[] arr = new int[size];
+        Random rInt = new Random();
+        for (int i = 0; i < size; i++) {
+            arr[i] = rInt.nextInt();
+        }
+        return arr;
+    }
+
+    public static double[] doubleArrR(int size) {
+        double[] arr = new double[size];
+        Random rDouble = new Random();
+        for (int i = 0; i < size; i++) {
+            arr[i] = rDouble.nextDouble() * 1000; // Scaling to make numbers more significant
+        }
+        return arr;
+    }
+
+    public static String[] stringArrR(int size) {
+        String[] arr = new String[size];
+        for (int i = 0; i < size; i++) {
+            arr[i] = randomString();
+        }
+        return arr;
+    }
+
+    public static String randomString() {
+        String returning = "";
+        Random num = new Random();
+        for (int i = 0; i < 7; i++) {
+            returning += getLetter(num.nextInt(26)); // Fixed to 26 for full alphabet range
+        }
+        return returning;
+    }
+
+    public static char getLetter(int number) {
+        String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        return alphabet.charAt(number);
     }
 }
