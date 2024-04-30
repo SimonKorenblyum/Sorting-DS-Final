@@ -5,7 +5,7 @@ public class FinalProject
     public static void main(String[] args) {
         //Testing integer sorting methods
         //creating random int arrays
-       /* int [] intArr10a = arrCreator.intArrR(10);
+        int [] intArr10a = arrCreator.intArrR(10);
         int [] intArr100a = arrCreator.intArrR(100);
         int [] intArr1000a = arrCreator.intArrR(1000);
         int [] intArr10000a = arrCreator.intArrR(10000);
@@ -114,10 +114,122 @@ public class FinalProject
         System.out.print("Int Heap sort 100000 (S) : ");
         HeapSort.intHeapSort(intArr100000hs);
         System.out.print("Int Heap sort 500000 (S) : ");
-        HeapSort.intHeapSort(intArr500000hs);*/
+        HeapSort.intHeapSort(intArr500000hs);
 
     int[] sizes = {10, 100, 1000, 10000, 50000, 100000, 500000};
+        //Testing double sorting methods
+        //creating random double arrays
+        double [] doubleArr10a = arrCreator.doubleArrR(10);
+        double [] doubleArr100a = arrCreator.doubleArrR(100);
+        double [] doubleArr1000a = arrCreator.doubleArrR(1000);
+        double [] doubleArr10000a = arrCreator.doubleArrR(10000);
+        double [] doubleArr50000a = arrCreator.doubleArrR(50000);
+        double [] doubleArr100000a = arrCreator.doubleArrR(100000);
+        double [] doubleArr500000a = arrCreator.doubleArrR(500000);
 
+        //unsorted double bubble sort
+        System.out.println("double Sorting methods: ");
+        System.out.println("Bubble Sort (Unsorted): ");
+        System.out.print("double bubble sort 10 (US) : ");
+        double [] doubleArr10bs = BubbleSort.doubleBubbleSort(doubleArr10a);
+        System.out.print("double bubble sort 100 (US) : ");
+        double [] doubleArr100bs = BubbleSort.doubleBubbleSort(doubleArr100a);
+        System.out.print("double bubble sort 1000 (US) : ");
+        double [] doubleArr1000bs = BubbleSort.doubleBubbleSort(doubleArr1000a);
+        System.out.print("double bubble sort 10000 (US) : ");
+        double [] doubleArr10000bs = BubbleSort.doubleBubbleSort(doubleArr10000a);
+        System.out.print("double bubble sort 50000 (US) : ");
+        double [] doubleArr50000bs = BubbleSort.doubleBubbleSort(doubleArr50000a);
+        System.out.print("double bubble sort 100000 (US) : ");
+        double [] doubleArr100000bs = BubbleSort.doubleBubbleSort(doubleArr100000a);
+        System.out.print("double bubble sort 500000 (US) : ");
+        double [] doubleArr500000bs = BubbleSort.doubleBubbleSort(doubleArr500000a);
+
+        //sorted double bubble sort
+        System.out.println("Bubble Sort (Sorted): ");
+        System.out.print("double bubble sort 10 (S) : ");
+        BubbleSort.doubleBubbleSort(doubleArr10bs);
+        System.out.print("double bubble sort 100 (S) : ");
+        BubbleSort.doubleBubbleSort(doubleArr100bs);
+        System.out.print("double bubble sort 1000 (S) : ");
+        BubbleSort.doubleBubbleSort(doubleArr1000bs);
+        System.out.print("double bubble sort 10000 (S) : ");
+        BubbleSort.doubleBubbleSort(doubleArr10000bs);
+        System.out.print("double bubble sort 50000 (S) : ");
+        BubbleSort.doubleBubbleSort(doubleArr50000bs);
+        System.out.print("double bubble sort 100000 (S) : ");
+        BubbleSort.doubleBubbleSort(doubleArr100000bs);
+        System.out.print("double bubble sort 500000 (S) : ");
+        BubbleSort.doubleBubbleSort(doubleArr500000bs);
+        
+        //unsorted double selection sort
+        System.out.println("Selection Sort (Unsorted): ");
+        System.out.print("double Selection sort 10 (US) : ");
+        double [] doubleArr10ss = SelectionSort.doubleSelectionSort(doubleArr10a);
+        System.out.print("double Selection sort 100 (US) : ");
+        double [] doubleArr100ss = SelectionSort.doubleSelectionSort(doubleArr100a);
+        System.out.print("double Selection sort 1000 (US) : ");
+        double [] doubleArr1000ss = SelectionSort.doubleSelectionSort(doubleArr1000a);
+        System.out.print("double Selection sort 10000 (US) : ");
+        double [] doubleArr10000ss = SelectionSort.doubleSelectionSort(doubleArr10000a);
+        System.out.print("double Selection sort 50000 (US) : ");
+        double [] doubleArr50000ss = SelectionSort.doubleSelectionSort(doubleArr50000a);
+        System.out.print("double Selection sort 100000 (US) : ");
+        double [] doubleArr100000ss = SelectionSort.doubleSelectionSort(doubleArr100000a);
+        System.out.print("double Selection sort 500000 (US) : ");
+        double [] doubleArr500000ss = SelectionSort.doubleSelectionSort(doubleArr500000a);
+
+        //sorted double Selection sort
+        System.out.println("Selection Sort (Sorted): ");
+        System.out.print("double Selection sort 10 (S) : ");
+        SelectionSort.doubleSelectionSort(doubleArr10ss);
+        System.out.print("double Selection sort 100 (S) : ");
+        SelectionSort.doubleSelectionSort(doubleArr100ss);
+        System.out.print("double Selection sort 1000 (S) : ");
+        SelectionSort.doubleSelectionSort(doubleArr1000ss);
+        System.out.print("double Selection sort 10000 (S) : ");
+        SelectionSort.doubleSelectionSort(doubleArr10000ss);
+        System.out.print("double Selection sort 50000 (S) : ");
+        SelectionSort.doubleSelectionSort(doubleArr50000ss);
+        System.out.print("double Selection sort 100000 (S) : ");
+        SelectionSort.doubleSelectionSort(doubleArr100000ss);
+        System.out.print("double Selection sort 500000 (S) : ");
+        SelectionSort.doubleSelectionSort(doubleArr500000ss);
+        
+        //unsorted double heap sort
+        System.out.println("Heap Sort (Unsorted): ");
+        System.out.print("double Heap sort 10 (US) : ");
+        double [] doubleArr10hs = HeapSort.doubleHeapSort(doubleArr10a);
+        System.out.print("double Heap sort 100 (US) : ");
+        double [] doubleArr100hs = HeapSort.doubleHeapSort(doubleArr100a);
+        System.out.print("double Heap sort 1000 (US) : ");
+        double [] doubleArr1000hs = HeapSort.doubleHeapSort(doubleArr1000a);
+        System.out.print("double Heap sort 10000 (US) : ");
+        double [] doubleArr10000hs = HeapSort.doubleHeapSort(doubleArr10000a);
+        System.out.print("double Heap sort 50000 (US) : ");
+        double [] doubleArr50000hs = HeapSort.doubleHeapSort(doubleArr50000a);
+        System.out.print("double Heap sort 100000 (US) : ");
+        double [] doubleArr100000hs = HeapSort.doubleHeapSort(doubleArr100000a);
+        System.out.print("double Heap sort 500000 (US) : ");
+        double [] doubleArr500000hs = HeapSort.doubleHeapSort(doubleArr500000a);
+
+        //sorted double Heap sort
+        System.out.println("Heap Sort (Sorted): ");
+        System.out.print("double Heap sort 10 (S) : ");
+        HeapSort.doubleHeapSort(doubleArr10hs);
+        System.out.print("double Heap sort 100 (S) : ");
+        HeapSort.doubleHeapSort(doubleArr100hs);
+        System.out.print("double Heap sort 1000 (S) : ");
+        HeapSort.doubleHeapSort(doubleArr1000hs);
+        System.out.print("double Heap sort 10000 (S) : ");
+        HeapSort.doubleHeapSort(doubleArr10000hs);
+        System.out.print("double Heap sort 50000 (S) : ");
+        HeapSort.doubleHeapSort(doubleArr50000hs);
+        System.out.print("double Heap sort 100000 (S) : ");
+        HeapSort.doubleHeapSort(doubleArr100000hs);
+        System.out.print("double Heap sort 500000 (S) : ");
+        HeapSort.doubleHeapSort(doubleArr500000hs);
+        
         for (int size : sizes) {
             System.out.println("Timing for size: " + size);
 
